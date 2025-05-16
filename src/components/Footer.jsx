@@ -1,41 +1,36 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Card, Container, Grid, Paper, Typography } from '@mui/material';
-import { LinkedIn, PhoneAndroid } from '@mui/icons-material';
+import React from "react";
+import { Box, Container, Typography, Link, IconButton } from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
-  const [value, setValue] = React.useState(0);
-
   return (
-    <Box mt={5}>
-			<Paper elevation={3}>
-				<Container>
-					<Grid container spacing={2}>
-						<Grid item xs={12} sm={6} md={4}>
-							<Typography variant='h5'>
-								Nathan
-							</Typography>
-						</Grid>
-						<Grid item xs={12} sm={6} md={4} py={3}>
-							<Grid container direction="row" sx={{ alignItems:'center' }}>
-								<PhoneAndroid/> 
-								<Typography fontSize={12} variant='span'>+639122161167</Typography>
-							</Grid>
-							<Grid container direction="row" sx={{ alignItems:'center' }}>
-								<LinkedIn />
-								<Typography fontSize={12} variant='span'>Nathanielle Romero</Typography>
-							</Grid>
-						</Grid>
-					</Grid>
-				</Container>
-			</Paper>
+    <Box component="footer" sx={{ backgroundColor: '#121212', color: '#fff', py: 3, mt: 8 }}>
+      <Container
+        maxWidth="lg"
+        sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: 'center' }}
+      >
+        <Typography variant="body2">
+          &copy; {new Date().getFullYear()} Nathanielle Romero. All rights reserved.
+        </Typography>
+
+        <Link
+          href="https://www.linkedin.com/in/nathanielle-romero-a2580020a/"
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          color="inherit"
+          sx={{ display: 'flex', alignItems: 'center', mt: { xs: 1, md: 0 } }}
+        >
+          <IconButton color="inherit">
+            <LinkedInIcon />
+          </IconButton>
+          <Typography variant="body2" sx={{ ml: 0.5 }}>
+            Connect on LinkedIn
+          </Typography>
+        </Link>
+      </Container>
     </Box>
   );
-}
+};
 
 export default Footer;

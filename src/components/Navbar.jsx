@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, Typography, Button, IconButton, Slide, useScrollTrigger, Fab, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Slide, useScrollTrigger, Fab, Box } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { AcUnit } from "@mui/icons-material";
 
@@ -14,7 +14,7 @@ function HideOnScroll(props) {
   );
 }
 
-const Navbar = () => {
+const Navbar = ({ aboutRef, contactRef}) => {
   const [showScroll, setShowScroll] = useState(false);
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -36,6 +36,18 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <HideOnScroll>
@@ -53,9 +65,9 @@ const Navbar = () => {
               N
             </Typography>
             <Box>
-              <Button color="inherit">Home</Button>
-              <Button color="inherit">About</Button>
-              <Button color="inherit">Contact</Button>
+              <Button color="inherit" onClick={scrollToTop}>Home</Button>
+              <Button color="inherit" onClick={scrollToAbout}>About</Button>
+              <Button color="inherit" onClick={scrollToContact}>Contact</Button>
             </Box>
           </Toolbar>
         </AppBar>
@@ -70,7 +82,6 @@ const Navbar = () => {
             position: "fixed",
             bottom: 16,
             right: 16,
-            background: "rgb(255, 59, 87)"
           }}
         >
           <KeyboardArrowUpIcon />
