@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { CardContent, Typography } from "@mui/material";
 
 const WorkCard = ({ companyName, title, description }) => {
   return (

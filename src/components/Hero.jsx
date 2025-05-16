@@ -1,46 +1,12 @@
 import React from "react";
-import { Box, Typography, Button, Grid, useTheme, useMediaQuery, Container } from "@mui/material";
+import { Box, Typography, Grid, useTheme, useMediaQuery, Container } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
-import { makeStyles } from "@mui/styles";
 import { redColor } from "../assets/theme";
 import Profile from "../utils/Profile";
-
-// const pageStyles = makeStyles(() => ({
-//   image:{
-//     height:'462px',
-//     width:'350px',
-//     borderRadius:'40%'
-//   },
-//   mobileSkills:{
-//     width:'100%',
-//     fontFamily:'Poppins'
-//   },
-// }))
 
 const Hero = () => {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-
-  // const SocialButton = ({ href, children }) => {
-  //   return (
-  //     <Button
-  //       variant="outlined"
-  //       component="a"
-  //       href={href}
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //       sx={{
-  //         color: "black",
-  //         padding: "10px",
-  //         border: "none",
-  //         boxShadow: "1px 1px 5px #ccc",
-  //         "&:hover": { color: "white", backgroundColor: redColor, borderColor: redColor },
-  //       }}
-  //     >
-  //       {children}
-  //     </Button>
-  //   );
-  // };
 
   return (
     <Container>
